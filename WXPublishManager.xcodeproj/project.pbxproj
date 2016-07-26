@@ -13,6 +13,10 @@
 		CEA60BCB1D4724730031C1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA60BCA1D4724730031C1FE /* Assets.xcassets */; };
 		CEA60BCE1D4724730031C1FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA60BCC1D4724730031C1FE /* LaunchScreen.storyboard */; };
 		CEA60BD91D4724730031C1FE /* WXPublishManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BD81D4724730031C1FE /* WXPublishManagerUITests.swift */; };
+		CEA60BE81D47250E0031C1FE /* WXMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE41D47250E0031C1FE /* WXMenuButton.swift */; };
+		CEA60BE91D47250E0031C1FE /* WXMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE51D47250E0031C1FE /* WXMenuModel.swift */; };
+		CEA60BEA1D47250E0031C1FE /* WXPublishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE61D47250E0031C1FE /* WXPublishVC.swift */; };
+		CEA60BEB1D47250E0031C1FE /* WXPublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE71D47250E0031C1FE /* WXPublishView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		CEA60BD41D4724730031C1FE /* WXPublishManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WXPublishManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA60BD81D4724730031C1FE /* WXPublishManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXPublishManagerUITests.swift; sourceTree = "<group>"; };
 		CEA60BDA1D4724730031C1FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA60BE41D47250E0031C1FE /* WXMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMenuButton.swift; sourceTree = "<group>"; };
+		CEA60BE51D47250E0031C1FE /* WXMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMenuModel.swift; sourceTree = "<group>"; };
+		CEA60BE61D47250E0031C1FE /* WXPublishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPublishVC.swift; sourceTree = "<group>"; };
+		CEA60BE71D47250E0031C1FE /* WXPublishView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPublishView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		CEA60BC21D4724730031C1FE /* WXPublishManager */ = {
 			isa = PBXGroup;
 			children = (
+				CEA60BE31D47250E0031C1FE /* WXPublishManager */,
 				CEA60BC31D4724730031C1FE /* AppDelegate.swift */,
 				CEA60BC51D4724730031C1FE /* ViewController.swift */,
 				CEA60BC71D4724730031C1FE /* Main.storyboard */,
@@ -94,6 +103,17 @@
 				CEA60BDA1D4724730031C1FE /* Info.plist */,
 			);
 			path = WXPublishManagerUITests;
+			sourceTree = "<group>";
+		};
+		CEA60BE31D47250E0031C1FE /* WXPublishManager */ = {
+			isa = PBXGroup;
+			children = (
+				CEA60BE41D47250E0031C1FE /* WXMenuButton.swift */,
+				CEA60BE51D47250E0031C1FE /* WXMenuModel.swift */,
+				CEA60BE61D47250E0031C1FE /* WXPublishVC.swift */,
+				CEA60BE71D47250E0031C1FE /* WXPublishView.swift */,
+			);
+			path = WXPublishManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA60BE81D47250E0031C1FE /* WXMenuButton.swift in Sources */,
+				CEA60BEB1D47250E0031C1FE /* WXPublishView.swift in Sources */,
+				CEA60BE91D47250E0031C1FE /* WXMenuModel.swift in Sources */,
 				CEA60BC61D4724730031C1FE /* ViewController.swift in Sources */,
+				CEA60BEA1D47250E0031C1FE /* WXPublishVC.swift in Sources */,
 				CEA60BC41D4724730031C1FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WXPublishManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msucity.WXPublishManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WXPublishManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msucity.WXPublishManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
