@@ -12,23 +12,17 @@ class WXPublishVC: UIViewController {
     
     var timer: NSTimer?
     
-//    convenience init(menuModels: [MenuModel]){
-//        
-//        self.init(nibName: nil,bundle: nil)
-//        
-//        self.menuModels = menuModels
-//        
-//    }
-//
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-//
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    private lazy var bottomView: BottomView = {
+        
+        let bottomView = NSBundle.mainBundle().loadNibNamed("BottomView", owner: nil, options: nil).last as! BottomView
+        
+        bottomView.closeButton.addTarget(self, action: "didClickClose:", forControlEvents: .TouchUpInside)
+        
+        bottomView.frame = CGRectMake(0,UIScreen.mainScreen().bounds.height - 44,UIScreen.mainScreen().bounds.width, 44)
+        
+        return bottomView
+        
+    }()
     
     var menuModels: [WXMenuModel] = []{
         
@@ -77,6 +71,8 @@ class WXPublishVC: UIViewController {
         
         view.backgroundColor = UIColor.whiteColor()
         
+        view.addSubview(bottomView)
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerChanged", userInfo: nil, repeats: true)
 
     }
@@ -106,6 +102,8 @@ class WXPublishVC: UIViewController {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerBackChanged", userInfo: nil, repeats: true)
         
+        bottomView.animationToRevertBtn()
+        
     }
 
     func timerBackChanged(){
@@ -128,6 +126,14 @@ class WXPublishVC: UIViewController {
             })
         
         btnIndex--
+        
+    }
+    
+    func didClickClose(btn: UIButton){
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerBackChanged", userInfo: nil, repeats: true)
+        
+        bottomView.animationToRevertBtn()
         
     }
 

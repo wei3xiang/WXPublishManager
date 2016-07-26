@@ -19,17 +19,15 @@ class WXPublishView: UIView {
     
     required init?(coder aDecoder: NSCoder) {super.init(coder: aDecoder); setUpView()}
     
-    private lazy var closeBtn:UIButton = {
+    private lazy var bottomView: BottomView = {
+
+        let bottomView = NSBundle.mainBundle().loadNibNamed("BottomView", owner: nil, options: nil).last as! BottomView
         
-        let closeBtn = UIButton(frame: CGRectMake(0, UIScreen.mainScreen().bounds.height - 49, UIScreen.mainScreen().bounds.width, 49))
+        bottomView.closeButton.addTarget(self, action: "didClickClose:", forControlEvents: .TouchUpInside)
         
-        closeBtn.setImage(UIImage(named: "tabbar_compose_background_icon_close"), forState: .Normal)
+        bottomView.frame = CGRectMake(0,UIScreen.mainScreen().bounds.height - 44,UIScreen.mainScreen().bounds.width, 44)
         
-        closeBtn.addTarget(self, action: "didClickClose:", forControlEvents: .TouchUpInside)
-        
-        closeBtn.backgroundColor = UIColor.whiteColor()
-        
-        return closeBtn
+        return bottomView
         
     }()
     
@@ -77,13 +75,10 @@ class WXPublishView: UIView {
         
         backgroundColor = UIColor(colorLiteralRed: 255, green: 251, blue: 240, alpha: 0.6)
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerChanged", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerChanged", userInfo: nil,
+            repeats: true)
         
-        let animation = CABasicAnimation(keyPath: "rotation")
-        
-        animation.toValue = M_PI_4
-        
-        addSubview(closeBtn)
+        addSubview(bottomView)
         
     }
     
@@ -112,6 +107,8 @@ class WXPublishView: UIView {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerBackChanged", userInfo: nil, repeats: true)
         
+        bottomView.animationToRevertBtn()
+        
     }
     
     func timerBackChanged(){
@@ -128,7 +125,7 @@ class WXPublishView: UIView {
         let btn = menuBtns[btnIndex-1]
         
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: { () -> Void in
-            btn.transform = CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.height)
+                btn.transform = CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.height)
             }, completion: {(b) in
                 self.removeFromSuperview()
         })
@@ -137,9 +134,11 @@ class WXPublishView: UIView {
         
     }
     
-    func didClickClose(button: UIButton){
+    func didClickClose(btn: UIButton){
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerBackChanged", userInfo: nil, repeats: true)
+        
+       bottomView.animationToRevertBtn()
         
     }
     

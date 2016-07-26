@@ -17,6 +17,8 @@
 		CEA60BE91D47250E0031C1FE /* WXMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE51D47250E0031C1FE /* WXMenuModel.swift */; };
 		CEA60BEA1D47250E0031C1FE /* WXPublishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE61D47250E0031C1FE /* WXPublishVC.swift */; };
 		CEA60BEB1D47250E0031C1FE /* WXPublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA60BE71D47250E0031C1FE /* WXPublishView.swift */; };
+		CEE96F2F1D47523C00D9EA2A /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE96F2E1D47523C00D9EA2A /* BottomView.swift */; };
+		CEE96F311D47524300D9EA2A /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE96F301D47524300D9EA2A /* BottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CEA60BE51D47250E0031C1FE /* WXMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMenuModel.swift; sourceTree = "<group>"; };
 		CEA60BE61D47250E0031C1FE /* WXPublishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPublishVC.swift; sourceTree = "<group>"; };
 		CEA60BE71D47250E0031C1FE /* WXPublishView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPublishView.swift; sourceTree = "<group>"; };
+		CEE96F2E1D47523C00D9EA2A /* BottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		CEE96F301D47524300D9EA2A /* BottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				CEA60BE51D47250E0031C1FE /* WXMenuModel.swift */,
 				CEA60BE61D47250E0031C1FE /* WXPublishVC.swift */,
 				CEA60BE71D47250E0031C1FE /* WXPublishView.swift */,
+				CEE96F2E1D47523C00D9EA2A /* BottomView.swift */,
+				CEE96F301D47524300D9EA2A /* BottomView.xib */,
 			);
 			path = WXPublishManager;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				CEA60BCE1D4724730031C1FE /* LaunchScreen.storyboard in Resources */,
 				CEA60BCB1D4724730031C1FE /* Assets.xcassets in Resources */,
 				CEA60BC91D4724730031C1FE /* Main.storyboard in Resources */,
+				CEE96F311D47524300D9EA2A /* BottomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +228,7 @@
 				CEA60BEB1D47250E0031C1FE /* WXPublishView.swift in Sources */,
 				CEA60BE91D47250E0031C1FE /* WXMenuModel.swift in Sources */,
 				CEA60BC61D4724730031C1FE /* ViewController.swift in Sources */,
+				CEE96F2F1D47523C00D9EA2A /* BottomView.swift in Sources */,
 				CEA60BEA1D47250E0031C1FE /* WXPublishVC.swift in Sources */,
 				CEA60BC41D4724730031C1FE /* AppDelegate.swift in Sources */,
 			);
@@ -412,6 +420,7 @@
 				CEA60BDF1D4724730031C1FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEA60BE01D4724730031C1FE /* Build configuration list for PBXNativeTarget "WXPublishManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +429,7 @@
 				CEA60BE21D4724730031C1FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
